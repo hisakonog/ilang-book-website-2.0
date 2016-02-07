@@ -1,43 +1,190 @@
 @charset "UTF-8";
 body {
-	padding : 0;
-	margin : 40px 0 20px 0;
-	font : 9.5px "Lucida Grande", "Lucida Sans Unicode";
-	line-height : 14px;
-    text-transform: uppercase;
-	background : #fff;
-	color : #9fa0a1;
-    font-weight: bold;
-	}
-	
-.light {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0; 
+	background-color: #ffffff;
+	font-family: "Georgia", serif, "Lucida Grande", Arial;
+}
+
+a{
+	color : #000099;
+	background : inherit;
+	text-decoration : none;
+}
+
+a:hover{
+	color: #000fff;
+}
+
+header{
+	height:10%;
+	width: 100%;
+	padding: 5px 0 0 0;
+	background-color: #ff3300;
+	background-image: url(../images/ilang-edition2008.jpg); 
+	background-size: cover; 
+	position: ;
+	/*text-align: center; */
+}
+header h1{
+	margin: 1%;
+	margin-left: 5%;
+	padding: 10px;
+	font-family: "Lucida Grande", Arial;
+	font-size: 230%;
+	color: #ffffff;
+	letter-spacing: 1px;
+	display: inline-block;
+}
+header h2{
+	margin-left:2%;
+	padding: 10px;
+	font-family: "Lucida Grande", Arial;
+	font-size: 130%;
+	color: #ffffff;
+	letter-spacing: 1px;
+	display: inline-block;
+}
+
+nav, section{
+	display: inline-block;
+	float: left;
+	margin: 2px;
+}
+
+/* navigation bar */ 
+nav{
+	width: 10%;
+	height: 200vh;
+	margin-left: 0;
+	padding: 10px 5px 5px 2px;
+	background-color: rgba(255, 229, 229, 1);
+	position: ;
+}
+nav ul{
+	margin: 2px;
+	padding: 5px;
+}
+nav li{
+	display: block;
+	width: auto;
+	margin-left: 1%;
+	margin-right: 1%;
+	padding: 20px 2px 15px 5px;
+	background-color: rgba(255, 229, 229, 1);
+	text-align: left;
+	text-decoration: none;
+	font-weight: bold;
+}
+nav li.credit{
+	font-weight: normal;
+	font-size: small;
+	padding: 20px 2px 0 5px;
+} 
+
+/* navigation sub menus */
+nav li ul{
+	position: absolute;
+	max-width: 20%;
+	height: auto;
+	margin-top: -10px;
+	display: none;
+}
+nav li:hover ul{
+	display: inline-block;
+}
+nav li ul li{
+	display: block;
+	padding-top: 5%;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: -2%;
+	font-weight: normal;
+	text-align: left
+} 
+
+/* 
+footer{
+	position: absolute;
+	height: 2%;
+	width: 100%;
+	padding: 0 0 5px 0;
+	background-color: rgba(255, 229, 229, 1);
+} */
+
+section{
+	width: 80%;
+	margin-left: 2%;
+	padding: 20px;
+}
+
+p.welcome{
+	text-align: center;
+}
+
+span.book{
+	font-style: oblique;
+	font-weight: bold;
+}
+
+/* for 2 editions, change to inlin-block and adjust right margin */
+.bookphoto{
+	display:block;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+.bookphoto img{
+	display: block;
+	margin: 0 auto;
+}
+.bookphoto figcaption{
+	text-align: center;
+	font-size: small;
+}
+.text{
+	margin: 2px;
+	padding: 2px;
+}
+.about{
+	margin-top: 5px;
+	display: inline;
+}
+/*.left{
+	width: 25%;
+	height: 100vh;
+	margin: 0;
+	padding: 20px 15px 10px 15px;
+	/* background-color: #ffe5e5; 
+	display: inline-block; 
+} */
+
+/*.light {
 	text-align: center;
 	color : #C0C0C0;
 	font-size: 9px;
 	}
 
-a {
-	color : #9fa0a1;
-	background : inherit;
-	text-decoration : none;
-	}
 a:hover {
-	color : #90297b;
+	color : #0000ff;
 	background : inherit;
 	text-decoration : none;
-	}
+	} 
 p {
 	margin : 5px 0;
 	}
 p.capital {
 	text-transform:none; 
-	}
-h1 {
-	font : 1.6em Arial, Sans-Serif;
-	color : #cfd0d2;
+	} 
+/*h1 {
+	font-family: Arial, Sans-Serif;
+	color: #cfd0d2;
 	text-transform: uppercase;
-	margin : 0;
-	letter-spacing : -1px;
+	margin: 0;
+	letter-spacing: -1px;
 	text-align: center;
 	}
 h2 {
@@ -45,11 +192,8 @@ h2 {
 	color : #2a77f6;
 	letter-spacing : -1px;
 	}
-h3 {
-	color : #2a77f6;
-	padding : 4px 0;
-	margin : 0;
-	}
+*/
+/*
 ul {
 	margin : 0;
 	padding : 0;
@@ -130,7 +274,7 @@ hr {
 	background : #fff url(images/turk.jpg) center no-repeat;
 	}
 	
-/*---------------------------CUBE-------------------------------------*/
+/*---------------------------CUBE-------------------------------------
 .cube {
 	float: left;
 	width: 300px;
@@ -228,112 +372,5 @@ hr {
 	height: 1px;
 	float: left;`
 	}
+*/
 
-
-	
-/*-------------------------------PHOTOS---------------------------------*/
-
-/*--------------------
-#photo {
-	width: 300px;
-	height: 300px;
-	float: right;
-	border-left: 5px;
-	}
-#photoa {
-	width: 225px;
-	height: 225px;
-	float: right;
-	padding-left: 5px;
-	}
-#photopa {
-	width: 225px;
-	height: 225px;
-	float: right;
-	padding-left: 5px;
-	}
---------------------*/
-	
-/*--------------------------------SOUNDWAVES--------------------------------*/
-/*--------------------------
-#photodesc {
-	width: 455px;
-	height: 32px;
-	float: right;
-	padding-left: 5px;
-	}
-
-#photobig {
-	width: 145px;
-	height: 120px;
-	float: right;
-	padding-left: 5px;
-	}
-
-#photowave {
-	width: 304px;
-	height: 137px;
-	float: right;
-	padding-left: 5px;
-	}
-	
-
-#navigation ul {
-	list-style-type: none;
-	list-style-image: none;
-	margin: 0;
-	padding: 0;
-	font-size: 1em;
-	color: #e5e5e5; 
-	}
-#navigation li {
-	color: #9fa0a1;
-	padding: 0px;
-	margin: 0;
-	}
-
-#navigation li a {
-	color: #9fa0a1;
-	text-transform: uppercase;
-	font-size: 0.7em;
-	}
-#navigation li a {
-	color: #9fa0a1;
-	text-transform: lowercase;
-	font-size: 0.95em;
-	font-family: Verdana, sans-serif;
-	}
-#navigation li a:hover {
-	color: #90297b;
-	}
-		
-#main {
-	margin-left : 60px;
-	margin-top : 10px;
-	width : 780px;
-	padding-top : 0px;
-	border-top : 0px solid #e3eaef;
-	}
-	
-#nav {
-	width: 760px;
-	height : 28px;
-	margin-top : 5px;
-	margin-bottom : 20px;
-	margin-left : 60px;
-	text-align: left;
-	border-top : 0px solid #e3eaef;
-	}
-#nav a {
-	font : 0.7em arial, sans-serif;
-	text-transform: uppercase;
-	text-decoration : none;
-	line-height : 27px;
-	}
-#nav a {
-	font : 0.9em verdana, arial, sans-serif;
-	text-transform: lowercase;
-	text-decoration : none;
-	line-height : 27px;
-	}
---------------------*/
