@@ -111,15 +111,6 @@ nav li ul li{
 	text-align: left;
 } 
 
-/* DO WE WANT A FOOTER ?
-footer{
-	position: absolute;
-	height: 2%;
-	width: 100%;
-	padding: 0 0 5px 0;
-	background-color: rgba(255, 229, 229, 1);
-} */
-
 .container{
 	width: 83%;
 	height: 100%;
@@ -260,7 +251,7 @@ td{
 	font-style: oblique;
 }
 
-/* class slides */
+/* class slides, audio resources */
 
 .slidebox{
 	width: 350px;
@@ -288,7 +279,7 @@ td{
 }
 
 .download-button{
-	margin: 10px;
+	margin: 10px; 
 	margin-left: 20px;
 	padding: 8px;
 	background-color: #13B08C; /* #53CAAF */
@@ -296,12 +287,31 @@ td{
 	border-radius: 8px;
 	color: #ffffff;
 	font-family: arial;
-	font-size: 0.8em; 	
+	font-size: 0.9em; 	
 }
 
 .slidebox p{
 	margin-top: 25px;
 	clear: both;
+}
+
+video{
+	margin: 20px;
+	margin-top: 30px;
+	padding: 20px;
+	width: 650px;
+	height: auto;
+	background-color: #D4D4D4;
+}
+
+audio{
+	margin-top: 20px;
+	margin-left: -15px;
+}
+
+.button-wrap{
+	margin: 15px;
+	margin-top: 25px;
 }
 
 /*table.link th:first-child{
