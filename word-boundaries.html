@@ -59,10 +59,12 @@
 		<p>Here is the audio for the Exercise 2.6.1. Download the wave file (ilang.wav) and open it with a sound editing program such as <a href="http://www.fon.hum.uva.nl/praat/" target="_blank">Praat</a> which is free to download. (Another sound editing program is <a href="http://www.audacityteam.org/download/" target="_blank">Audacity</a>, also free.) </p>
 		<p>The video below shows how it sounds and looks like when you open the file with Praat. The top part is the waveform and the bottom part is the spectrogram of the audio. You only need the waveform to do the exercise, it will be easier to work with. </p>
 
-		<div class="button-wrap"><!-- TO DO FORCE DOWNLOAD -->
-		<a href="media/ilang.wav" class="download-button">Download wave file</a></div> <!-- anchor with href opens and plays the file in a browser -->
-		<!-- download attribute in anchor tag not supported in Safari nor IE  a href="audio/ilang.wav" class="download-button" download>Download wav file</a -->
-
+		<div class="button-wrap">
+		<a href="media/wav/ilang.wav" class="download-button">Download wave file</a></div> <!-- download attribute in anchor tag not supported in Safari nor IE -->
+			<!-- To force browser to download linked file, add .htaccess file in the folder that contains the to-be-downloaded files. .htaccess file must specify the file type(s) that is to be force-downloaded.  
+			See https://www.drupal.org/node/417866 and http://stackoverflow.com/questions/11935672/link-to-force-download-of-mp3-files-to-default-downloads-folder 
+			Somehow the ilang.wav in bare media folder wasn't recognized by .htaccess (I really don't get it) so 
+			needed to wrap it in wav folder -->
 		<video controls>
 			<source src="media/ilang.mp4">
 				Your browser does not support HTML5 video.
