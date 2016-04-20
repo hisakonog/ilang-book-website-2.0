@@ -18,9 +18,6 @@ a:hover{
 	color: #000fff;
 }
 
-#page-wrap{
-}
-
 /* header */
 header{
 	height: 75px;
@@ -52,7 +49,6 @@ header h2{
 	letter-spacing: 1px;
 	display: inline-block;
 }
-
 
 nav, .container{
 	display: block;
@@ -164,13 +160,14 @@ section{
 	text-align: center;
 	font-size: small;
 }
-.text{
-	margin: 2px;
-	padding: 2px;
+
+#reviews{
+	width: 90%;
 }
 
-.about{
-	clear: both;
+#reviews p{
+	font-size: 0.95em;
+	line-height: 1.2;
 }
 
 /* book samples */
