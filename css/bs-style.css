@@ -55,6 +55,13 @@ a:hover{
 	color: #358fdc;	
 }
 
+.download-button:hover{
+	color: #fffb0b;
+}
+
+.button > a:hover{
+	color: #fffb0b;
+}
 
 /* Header & nav & footer*/
 
@@ -151,7 +158,7 @@ footer{
 	border-radius: 5px;
 }
 
-@media screen and(min-width: 768px){
+@media screen and (min-width: 768px){
 	footer{
 		margin-bottom: 5px;
 		margin-left: 25rem;
@@ -294,13 +301,13 @@ td{
 
 .slidebox img{
 	margin: 10px;
-	margin-left: 30px;
+	margin-left: 10px;
 	border: solid 1px #C0C0C0;
 }
 
 .download-button{
 	margin: 10px; 
-	margin-left: 20px;
+	margin-left: 5px;
 	padding: 8px;
 	background-color: #13B08C; /* #53CAAF */
 	border: solid 1px #13B08C; /* #53CAAF */
@@ -308,6 +315,15 @@ td{
 	color: #ffffff;
 	font-family: arial;
 	font-size: 0.9em; 	
+}
+
+@media screen and (min-width: 430px){
+	.download-button{
+		margin-left: 20px;
+	}
+	.slidebox img{
+		margin-left: 30px;
+	}
 }
 
 .slidebox p{
