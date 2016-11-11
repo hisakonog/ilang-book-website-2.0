@@ -7,13 +7,17 @@ html{
 https://css-tricks.com/couple-takes-sticky-footer/ 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 Browser support
-http://www.w3schools.com/cssref/css3_pr_flex.asp
+https://css-tricks.com/using-flexbox/
+http://www.w3schools.com/cssref/css3_pr_flex.asp 
 */
 
 body{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: -webkit-flex;
-	display: -ms-flex;
 	display: -moz-flex;
+	display: -ms-flex;
 	display: flex; 
 	-webkit-flex-direction: column;
 	-ms-flex-direction: column;
@@ -42,6 +46,8 @@ nav, footer {
 }
 
 main{
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	-moz-flex: 1;
@@ -403,5 +409,5 @@ object{
     padding: 0;
     overflow: hidden;
     padding-bottom: 60%;
-}
+	}
 }
