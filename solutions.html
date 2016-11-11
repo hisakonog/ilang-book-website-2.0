@@ -2,54 +2,67 @@
 <html lang = "en">
 <head>
 	<meta charset = "utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Solutions</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- link rel="stylesheet" href="css/style.css" type="text/css" / -->
+	<link rel="icon" type="image/jpg" href="images/booktiny.jpg" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- link rel="stylesheet" href="css/style.css" type="text/css" / -->
+	<link rel="stylesheet" href="css/bs-style.css" type="text/css" />
 	<link rel="icon" type="image/jpg" href="images/booktiny.jpg" />
 </head>
 
 <body>
-<header>
+
+<!-- Header & nav --> 
+<nav class="navbar navbar-default navbar-fixed-top nav-header">
+	<div class="container">
+
+	<header>
+	<div id="site-logo"><a href="index.html">
+		<img src="images/ilang-edition2013"></a></div>
 	<h1>I-Language</h1>
 	<h2>An Introduction to Linguistics as Cognitive Science</h2>
-</header>
+	</header>
 
-<nav>
-		<ul>
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar"> Menu
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+			</button>	
+	</div> <!-- /.navbar-header collapsed --> 
+
+	<div class="collapse navbar-collapse" id="main-navbar">
+		<ul class="nav nav-justified">
 			<li><a href="index.html">Home</a></li>
-			<li><a href="">Book Sample</a>
-				<ul>
+			<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Book Sample</a>
+				<ul class="dropdown-menu">
 					<li><a href="table-of-contents.html">Table of Contents</a></li>
-					<li><a href="sample-chapter.html">Sample Chapter</a></li>
-				</ul>
-			</li>
-			<li><a href="">Audio Resources</a>
-				<ul>
-					<li><a href="word-boundaries.html">Sound file for Exercise 2.6.1</a></li>
+					<li><a href="sample-chapter.html">Chapter 1</a></li>
+				</ul></li>
+			<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Audio Resources</a>
+				<ul class="dropdown-menu">
+					<li><a href="word-boundaries.html">Exercise 2.6.1</a></li>
 					<li><a href="english-t.html">English T's</a></li>
-					<li><a href="turkish-vowels.html">Turkish vowels</a></li>
-				</ul>
-			</li> 
-			<li><a href="">Teaching Resources</a>
-				<ul>
+					<li><a href="turkish-vowels.html">Turkish Vowels</a></li>
+				</ul></li>
+			<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Teaching Resources</a>
+				<ul class="dropdown-menu">
 					<li><a href="class-slides.html">Class Slides</a></li>
 					<li><a href="solutions.html">Exercise Solutions</a></li>
-				</ul>
-			</li>	
-			<li><a href="links.html">Links</a>
-				<ul>
-					<li><a href="links.html#book">From the Book</a></li>			
-					<li><a href="links.html#influences">Our Influences</a></li>		
-					<li><a href="links.html#resources">Additional Resources</a></li>
-					<li><a href="links.html#lingbooks">Popular Books - Linguistics</a></li>
-					<li><a href="links.html#cogscibooks">Popular Books - Cognitive Science</a></li>			
-				</ul>
-			</li>	
-			<li class="small"><a href="errata.html">Errata (2008 edition)</a></li>
-			<li class="small" ><a href="credits.html">Site Credits</a></li>
-			<li class="small"><a href="http://www.concordia.ca" target="_blank" alt="link to Concordia University website">Concordia University</a></li>
-			<li class="small"><a href="https://global.oup.com/academic/" target="_blank" alt="link to Oxford University Press academic division">OUP</a></li>
+				</ul></li>
+			<li><a href="links.html">Links</a></li>
+			<!-- li><a href="links.html">About</a></li -->
 		</ul>
+	</div>
+
+	</div> <!-- /.container -->
 </nav>
+
 
 <main>
 <div class="container">	
@@ -61,5 +74,15 @@
 
 </div>
 </main>
+
+<footer> 
+		<ul class="no-bullet">
+			<li><a href="http://www.concordia.ca/">Concordia University</a></li>
+			<li><a href="https://global.oup.com/academic/">OUP</a></li>
+			<li><a href="credits.html">Site credits &amp; Errata</a></li>
+		</ul>
+</footer>
+
+
 </body>
 </html>

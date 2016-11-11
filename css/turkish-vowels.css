@@ -135,6 +135,10 @@
   -o-transform: skew(0deg);
 }
 
+.hi, .nonhigh{
+  background-color: ;
+}
+
 .vowel-box-transparent{
   width: 105px;
   height: 95px;
@@ -225,7 +229,7 @@
   border: ;
 }
 
-.vowel-wave{
+.feature-spec, .vowel-wave{
   display: none;
 }
 
@@ -268,7 +272,7 @@
   border: 0px solid;
   text-align: center;
   line-height: 130%;
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: bold;
   font-family: "Lucida Grande", Arial; 
   background-color: rgba(83, 202, 175, 0);
@@ -322,7 +326,35 @@
   border: 0px solid
 }
 
+/* feature selectors */
+.feature-selector{
+  margin: 1%;
+  margin-left: 10%;
+  padding-left: 10%;
+  float: right;
+}
 
+#selector-label span{
+  margin: 1%;
+  margin-right: 22%;
+  font-family: "Lucida Grande", "sans serif", Arial; 
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+select{
+  width: 32%;
+  height: auto;
+  margin: 0.5%;
+  margin-right: 0%;
+  background-color: #fffa8b; 
+  color: #0000D0;
+  font-size: 1.1rem;
+}
+
+.height, .backness, .roundness{
+  display: none;
+}
 
 
 

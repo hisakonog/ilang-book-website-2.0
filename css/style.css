@@ -172,8 +172,8 @@ section{
 
 /* book samples */
 .button{
-	margin: 5px 50px 5px 5px;
-	float: right;
+	margin: 10px 50px 10px 10px;
+	/* float: right; */
 }
 .button a{
 	padding: 10px;
@@ -310,6 +310,5 @@ audio{
 	margin: 15px;
 	margin-top: 25px;
 }
-
 
 
