@@ -301,13 +301,15 @@ td{
 
 .slidebox img{
 	margin: 10px;
-	margin-left: 10px;
+	margin-left: 1px;
+	margin-right: 1px;
 	border: solid 1px #C0C0C0;
 }
 
 .download-button{
 	margin: 10px; 
-	margin-left: 5px;
+	margin-left: 1px;
+	margin-right: 1px;
 	padding: 8px;
 	background-color: #13B08C; /* #53CAAF */
 	border: solid 1px #13B08C; /* #53CAAF */
@@ -320,9 +322,11 @@ td{
 @media screen and (min-width: 430px){
 	.download-button{
 		margin-left: 20px;
+		margin-right: 10px;
 	}
 	.slidebox img{
 		margin-left: 30px;
+		margin-right: 10px;
 	}
 }
 
