@@ -328,7 +328,8 @@ td{
 	border-radius: 8px;
 	color: #ffffff;
 	font-family: arial;
-	font-size: 0.9em; 	
+	font-size: 0.9em;
+	/* font-weight: bold; */	
 }
 
 @media screen and (min-width: 430px){
@@ -378,10 +379,10 @@ audio{
 	padding: 10px;
 	border-radius: 5px;
 	font-family: arial;
-	font-size: 90%;
+	font-size: 1em;
 	font-weight: bold;
 	color: #ffffff;
-	background-color: #13B08C; /* #000099 #53CAAF */ 
+	background-color: #13B08C; /* #004a9e #000099 #53CAAF */ 
 } 
 
 object{
