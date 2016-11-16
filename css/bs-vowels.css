@@ -1,7 +1,7 @@
 /* http://stackoverflow.com/questions/16616846/css-triangle-and-box-inside-one-div
    http://stackoverflow.com/questions/7920754/how-to-draw-a-trapezium-trapezoid-with-css3 https://css-tricks.com/examples/ShapesOfCSS/ 
    https://css-tricks.com/examples/ShapesOfCSS/  */
-@media screen and (min-width: 768px){
+@media screen and (min-width: 1200px){
       .turkish-page-left{
         width: 45%; 
         height: auto;
