@@ -85,8 +85,8 @@
 }
 
 .rectangular-box-c{
-  width: 99px; 
-  height: 58px; 
+  width: 99px; /* 98px */
+  height: 58px; /* 59px */
   margin-left: -23px;
   border: 1px solid black;
   border-left: none;
