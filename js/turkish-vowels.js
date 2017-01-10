@@ -30,13 +30,13 @@ function highlightMatchingVowels(event){
     var backness = document.getElementById('backness').value; 
     var roundness = document.getElementById('roundness').value; 
     
-    var options= {
+    var options = {
     	height: height,
     	backness: backness,
     	roundness: roundness
     };
 
-    highlightVowels(options);
+    highlightVowels(options);  
 }
 
 // making a model of each vowel using feature matrix 
@@ -46,6 +46,54 @@ var VOWEL_I = {
 	height: "high",
 	backness: "nonback",
 	roundness: "nonround"
+};
+
+var VOWEL_Y = {
+    ipa: "y",
+    id: "vowel-I",
+    height: "high",
+    backness: "nonback",
+    roundness: "round"
+};
+
+var VOWEL_LAXU = {
+    ipa: "&#x026F;",
+    id: "vowel-LAXU",
+    height: "high",
+    backness: "back",
+    roundness: "nonround"
+};
+
+var VOWEL_U = {
+    ipa: "u",
+    id: "vowel-U",
+    height: "high",
+    backness: "back",
+    roundness: "round"
+};
+
+var VOWEL_E = {
+    ipa: "e",
+    id: "vowel-E",
+    height: "nonhigh",
+    backness: "nonback",
+    roundness: "nonround"
+};
+
+var VOWEL_RDE = {
+    ipa: "&#x0153;",
+    id: "vowel-RDE",
+    height: "nonhigh",
+    backness: "nonback",
+    roundness: "round"
+};
+
+var VOWEL_O = {
+    ipa: "o",
+    id: "vowel-O",
+    height: "nonhigh",
+    backness: "back",
+    roundness: "nonround"
 };
 
 var VOWEL_A = {
@@ -59,12 +107,14 @@ var VOWEL_A = {
 // making a vowel inventory by putting the models of vowels into an array 
 var VOWELS = [
 	VOWEL_I,
+    VOWEL_Y,
+    VOWEL_LAXU, 
+    VOWEL_U,
+    VOWEL_E, 
+    VOWEL_RDE,
+    VOWEL_O,
 	VOWEL_A
 ];
-
-// var VOWELS = {
-// 	VOWEL_I: VOWEL_I
-// };
 
 
 
@@ -73,7 +123,7 @@ function highlightVowels(featureBundle){
 
     // To find matching vowels, we use .map function 
     // .map function on an array lets you map input to output. You need to specify which input to map to which output. 
-    // Here the input parameter is a vowel, it compares against the featureMartix and if it matches returns the vowel
+    // Here the input parameter is a vowel, it compares against the featureMartix (see the models above) and if it matches returns the vowel
     // if it doesn't match returns null 
     // mapVowelToSeeIfItMatches function accepts a vowel and compares it against the featureBundle
     // run .map over the array "VOWLES" (= containing models of vowels)
@@ -88,7 +138,7 @@ function highlightVowels(featureBundle){
     		vowel.backness === featureBundle.backness && 
     		vowel.roundness === featureBundle.roundness){
     		return vowel;
-    	} else { // if the 
+    	} else { 
     		return null;
     	}
     })
@@ -103,7 +153,7 @@ function highlightVowels(featureBundle){
 	    }
     });
 
-    console.log(matchingVowels); // showing matching vowels in the console, it shouw be an array
+    console.log(matchingVowels); // showing matching vowels in the console, it should be an array
 	
 // 	matchingVowels.map(function(vowel){
 // 	var element = document.getElementById(vowel.id)
