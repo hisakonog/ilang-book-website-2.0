@@ -73,7 +73,7 @@
 <div class="container">
 <section class="center"> 
   <h2> Turkish Vowels </h2>
-  <p>Roll your mouse over the vowels in the vowel chart to see the larger photos of the face as well as the feature specification and the spectrogram of the vowel. Click the vowels in the chart to play the sound of the vowel. The symbols in bold font are Turkish orthographic forms of the vowels while the symbols in square blackets are IPA. </p>
+  <p>Use the feature selector to highlight vowels that correspond to the feature specifications. Roll your mouse over the vowels in the vowel chart to see the larger photos of the face as well as the feature specification and the spectrogram of the vowel. Click the vowels in the chart to play the sound of the vowel. The symbols in bold font are Turkish orthographic forms of the vowels while the symbols in square blackets are IPA. </p>
 </section>
 
 
@@ -81,6 +81,43 @@
 
 <!--  turkish page left -->
 <div class="turkish-page-left">
+
+<!-- Feature selector --> 
+<div id="feature-selector">
+
+<div class="row">
+  <div class="col-md-4 col-sm-12">
+    <div class="selector-label">Height</div>
+    <select class="selector-dropdown col-xs-9 col-md-12" id="height" name="height" onchange="highlightMatchingVowels()">
+        <option value="unspecified">Unspecified</option>
+        <option value="high">+HIGH</option>
+        <option value="nonhigh">-HIGH</option>
+    </select>    
+  </div>
+
+  <div class="col-md-4 col-sm-12">
+    <div class="selector-label">Backness</div>
+      <select class="selector-dropdown col-xs-9 col-md-12" id="backness" name="backness" onchange="highlightMatchingVowels()">
+          <option value="unspecified">Unspecified</option>
+          <option value="back">+BACK</option>
+          <option value="nonback">-BACK</option>
+      </select>
+  </div>
+
+  <div class="col-md-4 col-sm-12">
+    <div class="selector-label">Roundness</div>
+      <select class="selector-dropdown col-xs-9 col-md-12" id="roundness" name="roundness" onchange="highlightMatchingVowels()">
+          <option value="unspecified">Unspecified</option>
+          <option value="round">+ROUND</option>
+          <option value="nonround">-ROUND</option>
+      </select>
+  </div>
+</div>
+
+  <div class="button button-clear"><a href="" onclick='clearSelection()'>Clear selection</a></div>
+
+</div> <!-- /#feature-selector --> 
+
 
 <div class="vowel-space">
 
@@ -96,9 +133,6 @@
       	<source src="turkish-audio/i.mp3" type="audio/mpeg">
       </audio>
       <div class="feature-spec">+HIGH -BACK -ROUND</div>
-      <div class="height">high</div>
-      <div class="backness">nonback</div>
-      <div class="roundness">nonround</div>
     </div>
   </div>
   <div class="parallelogram para-no-border para-no-bottom">
@@ -204,34 +238,6 @@
 </div>
 
 </div> <!-- vowel-space div -->
-
- TODO feature selector and logic in javascript 
-
-<div id="feature-selector">
-  <p>Select the height, backness and roundness features to highlight the corresponding vowels in the vowel chart above.</p>
-<div id="selector-label">
-  <span>Height</span><span>Backness</span><span>Roundness</span>
-</div>
-
-  <select class="selector-dropdown" id="height" name="height" onchange="highlightMatchingVowels()">
-      <option value="unspecified">Unspecified</option>
-      <option value="high">+HIGH</option>
-      <option value="nonhigh">-HIGH</option>
-  </select>
-
-  <select class="selector-dropdown" id="backness" name="backness" onchange="highlightMatchingVowels()">
-      <option value="unspecified">Unspecified</option>
-      <option value="back">+BACK</option>
-      <option value="nonback">-BACK</option>
-  </select>
-
-  <select class="selector-dropdown" id="roundness" name="roundness" onchange="highlightMatchingVowels()">
-      <option value="unspecified">Unspecified</option>
-      <option value="round">+ROUND</option>
-      <option value="nonround">-ROUND</option>
-  </select>
-</div>
-
 
 </div> <!-- END turkish page left -->
 

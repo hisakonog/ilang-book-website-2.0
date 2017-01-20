@@ -356,6 +356,13 @@ select{
   display: none;
 }
 
+.button-clear a{
+  background-color: #fffa8b; 
+  color: #0000D0;
+  font-size: 1rem;
+  font-weight: normal;  
+}
+
 
 
 

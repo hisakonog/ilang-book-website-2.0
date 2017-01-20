@@ -23,25 +23,10 @@ function fadeColor(vowel){
 	vowel.style.backgroundColor = "rgba(255,153,227,0.2)"
 }
 
-// -- For the feature selector -- // 
+// // -- For the feature selector -- // // 
 
-function highlightMatchingVowels(event){
-    var height = document.getElementById('height').value; 
-    var backness = document.getElementById('backness').value; 
-    var roundness = document.getElementById('roundness').value; 
-    
-    var options = {
-    	height: height,
-    	backness: backness,
-    	roundness: roundness
-    };
-
-    highlightVowels(options);  
-}
-
-// making a model of each vowel using feature matrix 
+// making a model of each vowel using feature matrix -- they are javascript objects
 var VOWEL_I = {
-	ipa: "i",
 	id: "vowel-I",
 	height: "high",
 	backness: "nonback",
@@ -49,15 +34,13 @@ var VOWEL_I = {
 };
 
 var VOWEL_Y = {
-    ipa: "y",
-    id: "vowel-I",
+    id: "vowel-Y",
     height: "high",
     backness: "nonback",
     roundness: "round"
 };
 
 var VOWEL_LAXU = {
-    ipa: "&#x026F;",
     id: "vowel-LAXU",
     height: "high",
     backness: "back",
@@ -65,7 +48,6 @@ var VOWEL_LAXU = {
 };
 
 var VOWEL_U = {
-    ipa: "u",
     id: "vowel-U",
     height: "high",
     backness: "back",
@@ -73,7 +55,6 @@ var VOWEL_U = {
 };
 
 var VOWEL_E = {
-    ipa: "e",
     id: "vowel-E",
     height: "nonhigh",
     backness: "nonback",
@@ -81,7 +62,6 @@ var VOWEL_E = {
 };
 
 var VOWEL_RDE = {
-    ipa: "&#x0153;",
     id: "vowel-RDE",
     height: "nonhigh",
     backness: "nonback",
@@ -89,22 +69,21 @@ var VOWEL_RDE = {
 };
 
 var VOWEL_O = {
-    ipa: "o",
     id: "vowel-O",
     height: "nonhigh",
     backness: "back",
-    roundness: "nonround"
+    roundness: "round"
 };
 
 var VOWEL_A = {
-	ipa: "a",
 	id: "vowel-A",
 	height: "nonhigh",
 	backness: "back",
 	roundness: "nonround"
 };
 
-// making a vowel inventory by putting the models of vowels into an array 
+// throw those models into an array to use in array map() method below;  
+// this is the 'vowel inventory' 
 var VOWELS = [
 	VOWEL_I,
     VOWEL_Y,
@@ -116,53 +95,122 @@ var VOWELS = [
 	VOWEL_A
 ];
 
+function highlightMatchingVowels(event){
+    // remove highlight from highlighted vowels each time the user uses a selector 
+    // getElementsByClassName returns a collection (NodeList) so we need to loop through it
+    var vowelBoxes = document.getElementsByClassName('vowel-box'); 
+    console.log(vowelBoxes); 
+    for (var i=0; i<vowelBoxes.length; i++){
+        vowelBoxes[i].style.backgroundColor = 'rgba(255,153,227,0.2)'
+    };
+
+    // getting feature values from the selector 
+    var height = document.getElementById('height').value;   
+    var backness = document.getElementById('backness').value; 
+    var roundness = document.getElementById('roundness').value; 
+    
+    var featuresSelected = {
+        height: height,
+        backness: backness,
+        roundness: roundness
+    };
+
+    highlightVowels(featuresSelected);  
+}
 
 
-function highlightVowels(featureBundle){
-    console.log(featureBundle);   
+function highlightVowels(featuresSelected){ // featuresSelected = options chosen on the selector 
+    console.log(featuresSelected);   
 
-    // To find matching vowels, we use .map function 
-    // .map function on an array lets you map input to output. You need to specify which input to map to which output. 
-    // Here the input parameter is a vowel, it compares against the featureMartix (see the models above) and if it matches returns the vowel
-    // if it doesn't match returns null 
-    // mapVowelToSeeIfItMatches function accepts a vowel and compares it against the featureBundle
-    // run .map over the array "VOWLES" (= containing models of vowels)
-    // output is an array "matchingVowels" that contains the matching vowels and null elements
-    var matchingVowels = VOWELS.map(function mapVowelToSeeIfItMatches(vowel){ 
-    	// the problem of mapVowelToSeeIfItMatches is that it will return null every time user 
-    	// selects "unspecified" because no vowel model has the feature unspecified. 
-    	// We want to ignore "unspecified" and return vowels
+    // map() array method: https://www.discovermeteor.com/blog/understanding-javascript-map/ 
+    // myArray.map(myFunction): map() operates the function on an array and creates a new array  
+    // into which it puts the results of the operation.  
+    // getMatchingVowels operates on each vowel in VOWELS array, checking its height, backness and 
+    // roundness features to see if they match the selected feature specs. The results are thrown 
+    // into the new array matchingVowels.
+    var matchingVowels = VOWELS.map(function getMatchingVowels(vowel){ 
     	console.log(vowel);
-    	// this part is doing the intersection	
-    	if (vowel.height === featureBundle.height && 
-    		vowel.backness === featureBundle.backness && 
-    		vowel.roundness === featureBundle.roundness){
-    		return vowel;
-    	} else { 
-    		return null;
-    	}
+    	// see the decision tree down below	
+        if (vowel.height === featuresSelected.height){
+            if (vowel.backness === featuresSelected.backness){
+                if (vowel.roundness === featuresSelected.roundness){
+                    return vowel;
+                }else if (featuresSelected.roundness === 'unspecified'){
+                    return vowel;
+                }                
+            }else if (featuresSelected.backness === 'unspecified'){
+                if (vowel.roundness === featuresSelected.roundness){
+                    return vowel;
+                }else if (featuresSelected.roundness === 'unspecified'){
+                    return vowel;
+                }               
+            } 
+        }else if (featuresSelected.height === 'unspecified'){
+            if (vowel.backness === featuresSelected.backness){
+                if (vowel.roundness === featuresSelected.roundness){
+                    return vowel;
+                }else if (featuresSelected.roundness === 'unspecified'){
+                    return vowel;
+                }
+            }else if (featuresSelected.backness === 'unspecified'){
+                if (vowel.roundness === featuresSelected.roundness){
+                    return vowel;
+                }else if (featuresSelected.roundness === 'unspecified'){
+                    return console.log("Select at least one feature specification")
+                }
+            }
+        }    
     })
 
-	// 
-    matchingVowels = matchingVowels.reduce(function(vowel){
+	console.log("before filter", matchingVowels) // showing an array contaiing undefined elements
+
+    // filter() array method: http://www.w3schools.com/jsref/jsref_filter.asp
+    // myArrau.filter(myFunction) creates an array with myArray elements that have passed the test 
+    // defined in myFunction  
+    matchingVowels = matchingVowels.filter(function(vowel){
 	    if (vowel) {
 	    	return vowel;
 	    } else {
-	    	// removes empty/null elements from the array
+	    	// removes undefined elements from the matchingVowels array
 	    	return false;
 	    }
     });
 
-    console.log(matchingVowels); // showing matching vowels in the console, it should be an array
-	
-// 	matchingVowels.map(function(vowel){
-// 	var element = document.getElementById(vowel.id)
-// })
+    console.log("after filter", matchingVowels); // an array with NO undefined element in it
 
-    // if(document.getElementsByClassName('height').innerHTML == options.height){
-    //   console.log(document.getElementsByClassName('height').innerHTML);
-    // }
+    // Now we have an array "matchingVowels", of which each item is an Object {key: value, kay: value, ...}. 
+    // We want to get the value of the "id" key of each Object, use that id value to refer to the DOM element 
+    // (which is a vowel-box), then change the background color of the DOM element. 
+    matchingVowels.forEach(function(vowel){
+        box_id = vowel.id
+        console.log(box_id)
+        document.getElementById(box_id).style.backgroundColor = "#fffa8b"
+    }); 
+}  // highlightVowels
+
+function clearSelection(event){
+    document.getElementById('height').value = 'unspecified';
+    document.getElementById('backness').value = 'unspecified';
+    document.getElementById('roundness').value = 'unspecified';
 }
 
+// map, filter, reduce: http://cryto.net/~joepie91/blog/2015/05/04/functional-programming-in-javascript-map-filter-reduce/ 
 
 
+//      Height          Backness        Roundness
+// ---- Specified ----- Specified ----- Specified
+//   |              |               |
+//   |              |               |-- Unspecified
+//   |              |
+//   |              |-- Unspecified --- Specified
+//   |                              |
+//   |                              |-- Unspecified   
+//   |
+//   |
+//   |- Unspecified --- Specified ----- Specified 
+//                   |              |
+//                   |              |-- Unspecified 
+//                   |
+//                   |--Unspecified --- Specified 
+//                                  | 
+//                                  |-- Unspecified 
