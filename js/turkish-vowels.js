@@ -9,7 +9,7 @@ function showVowel(vowel){
 	document.getElementById('vowel-orth-large').innerHTML = v[2].innerHTML;
 	document.getElementById('vowel-ipa-large').innerHTML = v[3].innerHTML;
 	document.getElementById('vowel-wave-large').style.backgroundImage = "url(' "+v[4].src+" ')";
-	vowel.style.backgroundColor = "rgba(255,153,227,0.4)"
+	//vowel.style.backgroundColor =  "#fffa8b"   // "rgba(255,153,227,0.4)"
 }
 
 // when users click a vowel box, play the vowel sound
@@ -19,9 +19,9 @@ function playVowel(vowel){
 }
 
 // when users mouse-out from the vowel box, chang ethe background color back to the original 
-function fadeColor(vowel){
-	vowel.style.backgroundColor = "rgba(255,153,227,0.2)"
-}
+//function fadeColor(vowel){
+//	vowel.style.backgroundColor = "rgba(255,153,227,0.2)"
+//}
 
 // // -- For the feature selector -- // // 
 
@@ -96,12 +96,16 @@ var VOWELS = [
 ];
 
 function highlightMatchingVowels(event){
-    // remove highlight from highlighted vowels each time the user uses a selector 
-    // getElementsByClassName returns a collection (NodeList) so we need to loop through it
+    // remove highlight from highlighted vowels each time the user uses a selector. 
+    // getElementsByClassName returns a collection (NodeList) so we need to loop through it.
+    // NodeList is a colletion of DOM elements. It is not an array (even though it looks like so)
+    // and thus array methods (e.g. splice, reverse) can not be used. 
+    // http://stackoverflow.com/questions/5501433/nodelist-object-in-javascript 
+    // https://www.sitepoint.com/a-collection-is-not-an-array/ 
     var vowelBoxes = document.getElementsByClassName('vowel-box'); 
     console.log(vowelBoxes); 
     for (var i=0; i<vowelBoxes.length; i++){
-        vowelBoxes[i].style.backgroundColor = 'rgba(255,153,227,0.2)'
+        vowelBoxes[i].style.backgroundColor = '#ffffff' // 'rgba(255,153,227,0.2)'
     };
 
     // getting feature values from the selector 
@@ -135,35 +139,35 @@ function highlightVowels(featuresSelected){ // featuresSelected = options chosen
             if (vowel.backness === featuresSelected.backness){
                 if (vowel.roundness === featuresSelected.roundness){
                     return vowel;
-                }else if (featuresSelected.roundness === 'unspecified'){
+                }else if (featuresSelected.roundness === 'both'){
                     return vowel;
                 }                
-            }else if (featuresSelected.backness === 'unspecified'){
+            }else if (featuresSelected.backness === 'both'){
                 if (vowel.roundness === featuresSelected.roundness){
                     return vowel;
-                }else if (featuresSelected.roundness === 'unspecified'){
+                }else if (featuresSelected.roundness === 'both'){
                     return vowel;
                 }               
             } 
-        }else if (featuresSelected.height === 'unspecified'){
+        }else if (featuresSelected.height === 'both'){
             if (vowel.backness === featuresSelected.backness){
                 if (vowel.roundness === featuresSelected.roundness){
                     return vowel;
-                }else if (featuresSelected.roundness === 'unspecified'){
+                }else if (featuresSelected.roundness === 'both'){
                     return vowel;
                 }
-            }else if (featuresSelected.backness === 'unspecified'){
+            }else if (featuresSelected.backness === 'both'){
                 if (vowel.roundness === featuresSelected.roundness){
                     return vowel;
-                }else if (featuresSelected.roundness === 'unspecified'){
-                    return console.log("Select at least one feature specification")
+                }else if (featuresSelected.roundness === 'both'){
+                    return vowel;  // return all the vowels if feature specs are not fussy about + or - 
                 }
             }
         }    
     })
 
 	console.log("before filter", matchingVowels) // showing an array contaiing undefined elements
-
+    console.log(matchingVowels.length)
     // filter() array method: http://www.w3schools.com/jsref/jsref_filter.asp
     // myArrau.filter(myFunction) creates an array with myArray elements that have passed the test 
     // defined in myFunction  
@@ -177,6 +181,8 @@ function highlightVowels(featuresSelected){ // featuresSelected = options chosen
     });
 
     console.log("after filter", matchingVowels); // an array with NO undefined element in it
+    console.log(matchingVowels.length)
+
 
     // Now we have an array "matchingVowels", of which each item is an Object {key: value, kay: value, ...}. 
     // We want to get the value of the "id" key of each Object, use that id value to refer to the DOM element 
@@ -184,14 +190,14 @@ function highlightVowels(featuresSelected){ // featuresSelected = options chosen
     matchingVowels.forEach(function(vowel){
         box_id = vowel.id
         console.log(box_id)
-        document.getElementById(box_id).style.backgroundColor = "#fffa8b"
+        document.getElementById(box_id).style.backgroundColor = "#fffa8b" // "rgba(255,153,227,0.5)"
     }); 
 }  // highlightVowels
 
 function clearSelection(event){
-    document.getElementById('height').value = 'unspecified';
-    document.getElementById('backness').value = 'unspecified';
-    document.getElementById('roundness').value = 'unspecified';
+    document.getElementById('height').value = 'none';
+    document.getElementById('backness').value = 'none';
+    document.getElementById('roundness').value = 'none';
 }
 
 // map, filter, reduce: http://cryto.net/~joepie91/blog/2015/05/04/functional-programming-in-javascript-map-filter-reduce/ 

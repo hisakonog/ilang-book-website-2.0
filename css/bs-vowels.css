@@ -122,8 +122,8 @@
       .vowel-box{
         width: 105px;
         height: 95px;
-        border: 1px solid #e0e0de;
-        background-color: rgba(255,153,227,0.2);
+        border: 1px solid #88a088; /*#e0e0de; */
+        background-color: #ffffff; /*rgba(255,153,227,0.2); */
         text-align: center;
         -webkit-transform: skew(-18deg);
         -moz-transform: skew(-18deg);

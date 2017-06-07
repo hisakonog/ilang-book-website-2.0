@@ -90,7 +90,8 @@
     <div class="row">
       <div class="selector-label col-xs-3">Height</div>
       <select class="selector-dropdown col-xs-7 col-md-11" id="height" name="height" onchange="highlightMatchingVowels()">
-          <option value="unspecified">Unspecified</option>
+          <option value="none">--select a value--</option>
+          <option value="both">Both values</option>
           <option value="high">+HIGH</option>
           <option value="nonhigh">-HIGH</option>
       </select>
@@ -101,7 +102,8 @@
     <div class="row">
       <div class="selector-label col-xs-3">Backness</div>
         <select class="selector-dropdown col-xs-7 col-md-11" id="backness" name="backness" onchange="highlightMatchingVowels()">
-            <option value="unspecified">Unspecified</option>
+            <option value="none">--select a value--</option>
+            <option value="both">Both values</option>
             <option value="back">+BACK</option>
             <option value="nonback">-BACK</option>
         </select>
@@ -112,7 +114,8 @@
     <div class="row">
       <div class="selector-label col-xs-3">Roundness</div>
         <select class="selector-dropdown col-xs-7 col-md-11" id="roundness" name="roundness" onchange="highlightMatchingVowels()">
-            <option value="unspecified">Unspecified</option>
+            <option value="none">--select a value--</option>
+            <option value="both">Both values</option>
             <option value="round">+ROUND</option>
             <option value="nonround">-ROUND</option>
         </select>
@@ -129,7 +132,7 @@
 
 <div class="vowel-row row-high">
   <div class="parallelogram para-no-right para-no-bottom">
-    <div class="vowel-box" id="vowel-I" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="fadeColor(this)">
+    <div class="vowel-box" id="vowel-I" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="">
       <img class="vowel-photo" alt="+HIGH -BACK -ROUND" src="images/face-i.jpg">
       <img class="vowel-photo-profile" alt="high-front-nonround profile" src="images/fp-i.jpg">
       <div class="vowel-orth">i</div>
@@ -142,7 +145,7 @@
     </div>
   </div>
   <div class="parallelogram para-no-border para-no-bottom">
-    <div class="vowel-box" id="vowel-Y" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="fadeColor(this)">
+    <div class="vowel-box" id="vowel-Y" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="">
       <img class="vowel-photo" alt="+HIGH -BACK +ROUND" src="images/face-y.jpg">
       <img class="vowel-photo-profile" alt="hi-front-round profile" src="images/fp-y.jpg">
       <div class="vowel-orth">&uuml;</div>
@@ -154,7 +157,7 @@
     </div>
   </div>
   <div class="parallelogram para-no-border para-no-bottom">
-    <div class="vowel-box" id="vowel-LAXU" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="fadeColor(this)">
+    <div class="vowel-box" id="vowel-LAXU" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="">
       <img class="vowel-photo" alt="+HIGH +BACK -ROUND" src="images/face-lax-u.jpg">
       <img class="vowel-photo-profile" alt="hi-back-nonround profile" src="images/fp-lax-u.jpg">
       <div class="vowel-orth">I</div>
@@ -166,7 +169,7 @@
     </div>
   </div>
   <div class="rectangular-box-a">
-    <div class="vowel-box box-non-skew" id ="vowel-U" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="fadeColor(this)">
+    <div class="vowel-box box-non-skew" id ="vowel-U" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="">
       <img class="vowel-photo" alt="+HIGH +BACK +ROUND" src="images/face-u.jpg">
       <img class="vowel-photo-profile" alt="hi-back-round profile" src="images/fp-u.jpg">
       <div class="vowel-orth">u</div>
@@ -181,7 +184,7 @@
 
 <div class="vowel-row row-mid">
   <div class="parallelogram para-no-right para-no-top para-no-bottom">
-    <div class="vowel-box" id="vowel-E" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="fadeColor(this)">
+    <div class="vowel-box" id="vowel-E" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="">
       <img class="vowel-photo" alt="-HIGH -BACK -ROUND" src="images/face-e.jpg">
       <img class="vowel-photo-profile" alt="nonhi-front-nonround profile" src="images/fp-e.jpg">
       <div class="vowel-orth">e</div>
@@ -194,7 +197,7 @@
   </div>
 
   <div class="parallelogram para-no-border para-no-bottom para-no-top">
-    <div class="vowel-box" id="vowel-RDE" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="fadeColor(this)">
+    <div class="vowel-box" id="vowel-RDE" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="">
       <img class="vowel-photo" alt="-HIGH -BACK +ROUND" src="images/face-rd-e.jpg">
       <img class="vowel-photo-profile" alt="nonhi-front-round profile" src="images/fp-rd-e.jpg">
       <div class="vowel-orth">&ouml;</div>
@@ -207,7 +210,7 @@
   </div>
 
   <div class="rectangular-box-b">
-    <div class="vowel-box box-non-skew" id="vowel-O" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="fadeColor(this)">
+    <div class="vowel-box box-non-skew" id="vowel-O" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="">
       <img class="vowel-photo" alt="-HIGH +BACK +ROUND" src="images/face-o.jpg">
       <img class="vowel-photo-profile" alt="nonhi-back-round profile" src="images/fp-o.jpg">
       <div class="vowel-orth">o</div>
@@ -222,7 +225,7 @@
 
 <div class="vowel-row row-low">
   <div class="parallelogram para-wide">
-    <div class="vowel-box" id="vowel-A" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="fadeColor(this)">
+    <div class="vowel-box" id="vowel-A" onmouseover="showVowel(this)" onclick="playVowel(this)" onmouseout="">
       <img class="vowel-photo" alt="-HIGH +BACK -ROUND" src="images/face-a.jpg">
       <img class="vowel-photo-profile" alt="nonhi-back-nonround profile" src="images/fp-a.jpg">
       <div class="vowel-orth">a</div>
