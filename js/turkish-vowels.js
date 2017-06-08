@@ -96,7 +96,8 @@ var VOWELS = [
 ];
 
 function highlightMatchingVowels(event){
-    // remove highlight from highlighted vowels each time the user uses a selector. 
+    // Remove highlight from highlighted vowels each time the user uses a selector. 
+    // This serves for the purpose of "de-highlighting" unmatching vowels. 
     // getElementsByClassName returns a collection (NodeList) so we need to loop through it.
     // NodeList is a colletion of DOM elements. It is not an array (even though it looks like so)
     // and thus array methods (e.g. splice, reverse) can not be used. 
@@ -195,9 +196,9 @@ function highlightVowels(featuresSelected){ // featuresSelected = options chosen
 }  // highlightVowels
 
 function clearSelection(event){
-    document.getElementById('height').value = 'none';
-    document.getElementById('backness').value = 'none';
-    document.getElementById('roundness').value = 'none';
+    document.getElementById('height').value = 'both';
+    document.getElementById('backness').value = 'both';
+    document.getElementById('roundness').value = 'both';
 }
 
 // map, filter, reduce: http://cryto.net/~joepie91/blog/2015/05/04/functional-programming-in-javascript-map-filter-reduce/ 
